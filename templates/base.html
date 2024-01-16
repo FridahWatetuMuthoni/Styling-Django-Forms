@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <title>Post App</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <a class="btn btn-outline-info my-5" href="{% url 'home' %}"
+          >Go back to homepage</a
+        >
+        <a class="btn btn-outline-info my-5 mx-3" href="{% url 'create' %}"
+          >Create New Post</a
+        >
+      </div>
+    </nav>
+    <div class="container">{% block content %} {% endblock %}</div>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  </body>
+</html>

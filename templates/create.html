@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <h1 class="text-center mb-4">Create a new post</h1>
+  <form
+    action="{% url 'create' %}"
+    method="post"
+    class="card p-5 create-form shadow col-md-8 mx-auto"
+    enctype="multipart/form-data"
+  >
+    {% csrf_token %}
+    <!--form-->
+    {{form.as_p}}
+    <button type="submit" class="btn btn-success">Create</button>
+  </form>
+</div>
+{% endblock content%}

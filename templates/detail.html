@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mb-5">
+  <div class="card col-12">
+    <img
+      src="{{post.image.url}}"
+      alt="{{post}}-image"
+      class="card-img-top"
+      width="800px"
+      height="250px"
+    />
+    <div class="card-body">
+      <h3 class="card-title mt-3">{{post.title}}</h3>
+      {% if post.author %}
+      <h5 class="card-subtitle my-3 text-body-secondary">
+        Author: {{post.author}}
+      </h5>
+      {% endif %}
+      <h5 class="card-subtitle my-3 text-body-secondary">
+        Posted On: {{post.created_on|date:'M j, Y'}}
+      </h5>
+      <h5 class="card-subtitle my-3 text-body-secondary">
+        Updated On: {{post.updated_on|date:'M j, Y'}}
+      </h5>
+      <h6 class="card-text">{{post.description}}</h6>
+      <p class="card-text">{{post.body}}</p>
+    </div>
+  </div>
+</div>
+{% endblock content %}
